@@ -14,6 +14,11 @@ void bstree::delHelper(node* ptr){
 
 bstree::bstree(): root(nullptr){}
 
+bstree::~bstree(){
+    if(root){
+        delHelper(root);
+    }
+}
 
 
 
