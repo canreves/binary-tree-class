@@ -54,5 +54,32 @@ void bstree::insert(int num){
         }
 }
 
+node* bstree::copyHelper(node* ptr){
+    if(!ptr){
+        return nullptr;
+    }
 
+    node* newNode = new node(ptr->info);
 
+    newNode->left = copyHelper(ptr->left);
+    newNode->right = copyHelper(ptr->right);
+
+    return newNode;
+}
+
+bstree::bstree(const bstree & other){
+    root = copyHelper(root);
+}
+
+bstree & bstree::operator=(const bstree & other){
+    if(this == &other){
+        return *this;
+    }
+
+    if(root){
+        delHelper(root);
+    }
+
+    root = copyHelper(other.root);
+    return *this;
+}
