@@ -10,13 +10,16 @@ class bstree{
     private:
     node* root;
     void delHelper(node* ptr);
+    node* copyHelper(node* ptr); 
 
     public:
 
     bstree() : root(nullptr){}
-    
-
     ~bstree();
-
+    bstree(const bstree &);
     void insert(int num);
+    bstree & operator=(const bstree &);
+
+
+
 };
