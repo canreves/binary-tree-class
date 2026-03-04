@@ -82,4 +82,43 @@ bstree & bstree::operator=(const bstree & other){
 
     root = copyHelper(other.root);
     return *this;
+}   
+
+bstree::bstree(bstree && other){
+    root = other.root;
+    other.root = nullptr;
+}
+
+bstree & bstree::operator=(bstree && other){
+    if(this == &other){
+        return *this;
+    }
+
+    if(root){
+        delHelper(root);
+    }
+
+    root = other.root;
+    other.root = nullptr;
+
+    return *this;
+}
+
+bool bstree::doesExist(int num){
+    node* ptr = root;
+
+    while(ptr){
+        if(num > ptr->info){
+            ptr = ptr->right;
+        }
+        else if(num < ptr->info){
+            ptr = ptr->left;
+        }
+
+        else{
+            return true;
+        }
+    }
+
+    return false;
 }

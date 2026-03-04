@@ -13,12 +13,16 @@ class bstree{
     node* copyHelper(node* ptr); 
 
     public:
-
     bstree() : root(nullptr){}
     ~bstree();
     bstree(const bstree &);
     void insert(int num);
     bstree & operator=(const bstree &);
+    bstree(bstree &&);
+    bstree & operator=(bstree &&);
+    bool doesExist(int num);
+    
+    
 
 
 
