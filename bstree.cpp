@@ -165,3 +165,8 @@ void bstree::print_post_order_helper(node* ptr){
     }
 }
 
+void bstree::create_from_array(int arr[], int size){
+    for(int i = 0; i < size; i++){
+        insert(arr[i]);
+    }
+}
