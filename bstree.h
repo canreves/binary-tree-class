@@ -25,10 +25,9 @@ class bstree{
     bstree & operator=(bstree &&);
     bool doesExist(int num);
     void print_in_order();
-    
     void print_pre_order();
     void print_post_order();
-    
+    void create_from_array(int arr[], int size);
 
 
 
