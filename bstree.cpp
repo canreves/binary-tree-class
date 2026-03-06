@@ -122,3 +122,46 @@ bool bstree::doesExist(int num){
 
     return false;
 }
+
+void bstree::print_in_order(){
+    if(root){
+        print_in_order_helper(root);
+    }
+}
+
+void bstree::print_in_order_helper(node* ptr){
+    if(ptr){
+        print_in_order_helper(ptr->left);
+        cout<<ptr->info<<" ";
+        print_in_order_helper(ptr->right);
+    }
+}
+
+void bstree::print_pre_order(){
+    if(root){
+        print_pre_order_helper(root);
+    }
+}
+
+void bstree::print_pre_order_helper(node* ptr){
+    if(ptr){
+        cout<<ptr->info<<" ";
+        print_pre_order_helper(ptr->left);
+        print_pre_order_helper(ptr->right);
+    }
+}
+
+void bstree::print_post_order(){
+    if(root){
+        print_post_order_helper(root);
+    }
+}
+
+void bstree::print_post_order_helper(node* ptr){
+    if(ptr){
+        print_post_order_helper(ptr->left);
+        print_post_order_helper(ptr->right);
+        cout<<ptr->info<<" ";
+    }
+}
+
