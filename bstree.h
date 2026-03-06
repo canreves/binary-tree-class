@@ -11,6 +11,9 @@ class bstree{
     node* root;
     void delHelper(node* ptr);
     node* copyHelper(node* ptr); 
+    void print_in_order_helper(node*);
+    void print_pre_order_helper(node*);
+    void print_post_order_helper(node*);
 
     public:
     bstree() : root(nullptr){}
@@ -22,6 +25,7 @@ class bstree{
     bstree & operator=(bstree &&);
     bool doesExist(int num);
     void print_in_order();
+    
     void print_pre_order();
     void print_post_order();
     
